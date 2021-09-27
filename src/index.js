@@ -6,12 +6,13 @@ const number = document.querySelector('span');
 
 // modify datas in reducer
 const countModifier = (count = 0, action) => {
-  if (action.type === 'PLUS') {
-    return count + 1;
-  } else if (action.type === 'MINUS') {
-    return count - 1;
-  } else {
-    return count;
+  switch (action.type) {
+    case 'PLUS':
+      return count + 1;
+    case 'MINUS':
+      return count - 1;
+    default:
+      return count;
   }
 };
 
