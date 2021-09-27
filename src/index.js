@@ -18,11 +18,12 @@ const countModifier = (count = 0, action) => {
 // create store
 const countStore = createStore(countModifier);
 
-// send action to reducer
-countStore.dispatch({ type: 'MINUS' });
-countStore.dispatch({ type: 'MINUS' });
-countStore.dispatch({ type: 'MINUS' });
-countStore.dispatch({ type: 'MINUS' });
-countStore.dispatch({ type: 'PLUS' });
+const onChange = () => {
+  number.innerText = countStore.getState();
+};
 
-console.log(countStore.getState());
+// listen data change
+countStore.subscribe(onChange);
+
+plus.addEventListener('click', () => countStore.dispatch({ type: 'PLUS' }));
+minus.addEventListener('click', () => countStore.dispatch({ type: 'MINUS' }));
