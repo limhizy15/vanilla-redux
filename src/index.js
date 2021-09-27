@@ -4,12 +4,15 @@ const plus = document.querySelector('#plus');
 const minus = document.querySelector('#minus');
 const number = document.querySelector('span');
 
+const PLUS = 'PLUS';
+const MINUS = 'MINUS';
+
 // modify datas in reducer
 const countModifier = (count = 0, action) => {
   switch (action.type) {
-    case 'PLUS':
+    case PLUS:
       return count + 1;
-    case 'MINUS':
+    case MINUS:
       return count - 1;
     default:
       return count;
@@ -26,5 +29,5 @@ const onChange = () => {
 // listen data change
 countStore.subscribe(onChange);
 
-plus.addEventListener('click', () => countStore.dispatch({ type: 'PLUS' }));
-minus.addEventListener('click', () => countStore.dispatch({ type: 'MINUS' }));
+plus.addEventListener('click', () => countStore.dispatch({ type: PLUS }));
+minus.addEventListener('click', () => countStore.dispatch({ type: MINUS }));
