@@ -3,17 +3,17 @@ import { createStore } from 'redux';
 const ADD = 'ADD';
 const DELETE = 'DELETE';
 
-const addTodo = text => {
+const addToDo = text => {
   return {
     type: ADD,
     text,
   };
 };
 
-const deleteTodo = id => {
+const deleteToDo = id => {
   return {
     type: DELETE,
-    id,
+    id: parseInt(id),
   };
 };
 
@@ -22,7 +22,7 @@ const reducer = (state = ['hello'], action) => {
     case ADD:
       return [{ text: action.text, id: Date.now() }, ...state];
     case DELETE:
-      return state.filter(todo => todo !== action.id);
+      return state.filter(todo => todo.id !== action.id);
     default:
       return state;
   }
@@ -31,8 +31,8 @@ const reducer = (state = ['hello'], action) => {
 const store = createStore(reducer);
 
 export const actionCreators = {
-  addTodo,
-  deleteTodo,
+  addToDo,
+  deleteToDo,
 };
 
 export default store;
