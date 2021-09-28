@@ -13,3 +13,5 @@
 - `subscribe`: change를 들을 수 있도록 해준다. store에 있는 data가 변하면 콜백함수를 호출
 
 ## React-Redux
+
+- Get state from store! => connect()!!!! : connect components to store
