@@ -11,3 +11,5 @@
 - action : reducer와 소통하는 방법이래.. 어떤 걸 하라고 알려주는 역할인가봐. 무조건 object형태여야함
   - `store.dispatch()`로 액션을 전달
 - `subscribe`: change를 들을 수 있도록 해준다. store에 있는 data가 변하면 콜백함수를 호출
+
+## React-Redux
