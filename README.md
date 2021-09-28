@@ -15,3 +15,5 @@
 ## React-Redux
 
 - Get state from store! => connect()!!!! : connect components to store
+  - mapStateToProps, mapDispatchToProps를 매개변수로
+- mapStateToProps : store의 state를 props로 전달
